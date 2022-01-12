@@ -1,0 +1,14 @@
+# Package Information for pkg-config
+
+prefix=/home/yxt/paddle_lite_ocr/opencv-3.4.7/opencv3
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib64
+includedir_old=${prefix}/include/opencv
+includedir_new=${prefix}/include
+
+Name: OpenCV
+Description: Open Source Computer Vision Library
+Version: 3.4.7
+Libs: -L${exec_prefix}/lib64 -lopencv_videostab -lopencv_highgui -lopencv_superres -lopencv_stitching -lopencv_dnn -lopencv_ml -lopencv_shape -lopencv_videoio -lopencv_imgcodecs -lopencv_photo -lopencv_video -lopencv_objdetect -lopencv_calib3d -lopencv_features2d -lopencv_imgproc -lopencv_flann -lopencv_core
+Libs.private: -L${exec_prefix}/share/OpenCV/3rdparty/lib64 -llibwebp -llibpng -llibtiff -llibjpeg-turbo -lzlib -littnotify -llibprotobuf -ltegra_hal -lquirc -L/usr/lib/aarch64-linux-gnu -ljasper -lImath -lIlmImf -lIex -lHalf -lIlmThread -lgtk-3 -lgdk-3 -lpangocairo-1.0 -lpango-1.0 -latk-1.0 -lcairo-gobject -lcairo -lgdk_pixbuf-2.0 -lgio-2.0 -lgobject-2.0 -lglib-2.0 -lgthread-2.0 -ldc1394 -lavcodec-ffmpeg -lavformat-ffmpeg -lavutil-ffmpeg -lswscale-ffmpeg -ldl -lm -lpthread -lrt
+Cflags: -I${includedir_old} -I${includedir_new}
