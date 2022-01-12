@@ -1,0 +1,39 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+
+  build:
+    name: Build Docker images
+    runs-on: ubuntu-latest
+    if: github.event_name != 'pull_request'
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: "0" # 0=all, needed for setuptools-scm to resolve version tags
+          
+      - name: Login to Docker Hub
+        uses: docker/login-action@v1
+        with:
+          username: steinvenior
+          password: ${{ secrets.KEY }}
+
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v1
+        
+      - name: Set up Docker Buildx
+        id: buildx
+        uses: docker/setup-buildx-action@v1
+
+      - name: Build
+        run: |
+          docker buildx build \
+            --push \
+            --platform linux/arm64 \
+            --tag "steinvenior/paddle_lite_ocr_linux_arm64:all" \
+            --file .docker/Dockerfile .
