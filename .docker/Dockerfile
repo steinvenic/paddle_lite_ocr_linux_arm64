@@ -3,16 +3,7 @@
 
 FROM ubuntu:16.04
 
-RUN apt-get update && apt-get install -y --no-install-recommends \
-   gcc \
-   g+ \
-   make \
-   unzi \
-   libopencv-de \
-   pkg-config \
-   nstall libssl-dev \
-   libgtk-3-dev
-
+RUN apt-get update && apt-get install -y --no-install-recommends gcc g++ make wget unzip libopencv-dev pkg-config libssl-dev libgtk-3-dev
 COPY . /app
 
 WORKDIR /app
