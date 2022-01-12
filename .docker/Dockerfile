@@ -12,7 +12,7 @@ RUN cp -r ./cxx/lib/libpaddle_light_api_shared.so /usr/lib \
 && wget --no-check-certificate https://cmake.org/files/v3.16/cmake-3.16.8.tar.gz \
 && tar -zxvf cmake-3.16.8.tar.gz;rm -fr cmake-3.16.8.tar.gz;cd cmake-3.16.8 \
 && ./configure \
-&& ./make && make install \
+&& make && make install \
 && apt clean \
 
 WORKDIR /app
