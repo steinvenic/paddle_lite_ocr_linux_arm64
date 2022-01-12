@@ -1,7 +1,7 @@
 # paddle_lite_ocr_linux_arm64
 #
 
-FROM ubuntu:16.04.7
+FROM ubuntu:16.04
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
    gcc \
