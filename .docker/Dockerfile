@@ -18,4 +18,4 @@ RUN cp -r ./cxx/lib/libpaddle_light_api_shared.so /usr/lib \
 WORKDIR /app
 RUN ./build.sh
 
-ENTRYPOINT ["/app/install/paddle_lite_ocr/paddle_lite_ocr"]
+ENTRYPOINT ["/app/install/paddle_lite_ocr/pdocr"]
