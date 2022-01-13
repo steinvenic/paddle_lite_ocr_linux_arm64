@@ -1,4 +1,16 @@
 # paddle_lite_ocr_linux_arm64
 
 
-## 官方只有arm 移动平台的教程，自己搞很困难，主要参考[这篇文章](https://blog.csdn.net/qq_39056987/article/details/121078743?spm=1001.2014.3001.5501),这篇文章也得很不错，但对于新手来说还是有些困难，而且交叉编译没搞起来，最终在另一台arm设备上编译的。官方也没有arm 平台的docker镜像，遂做了这个。我的主要用途主要是和一款商业ocr软件做对比，docker更方便些
+## 公司试用了一款商用`ocr`，部署在`arm`平台上，我只是想那它来和`PaddleOcr`做个对比，但官方没有出相关教程（只有移动平台的），然后废了2天时间，主要参考[这篇文章](https://blog.csdn.net/qq_39056987/article/details/121078743?spm=1001.2014.3001.5501)，终于能成功运行了（没用交叉编译），遂顺手做个`docker`镜像，方便你我他~
+
+
+# 使用步骤
+- 拉取镜像：`docker pull steinvenior/paddle_lite_ocr_linux_arm64:all`
+
+- 设置别名，方便使用：`alias pdocr='docker run --rm  -i --user "$(id -u):$(id -g)" --workdir /data -v "$PWD:/data" steinvenior/paddle_lite_ocr_linux_arm64:all'`
+
+- 例子：`pdocr ./ocr-test.jpg`,注意！！，后面的图片资源路径只能为当前路径下的相对路径，简单来讲就是：在待识别的图片相同目录下执行该命令
+
+# 截图
+
+![image](https://user-images.githubusercontent.com/18524326/149324039-f014e942-f2a9-42be-a348-ac8439fd10ce.png)
