@@ -20,6 +20,7 @@ cmake .. \
     -DCMAKE_CXX_COMPILER=${GCC_COMPILER}-g++
 make -j4
 make install
+cp -r debug/* install/paddle_lite_ocr/
 cd -
 
 
