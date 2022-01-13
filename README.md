@@ -1,10 +1,10 @@
-# paddle_lite_ocr_linux_arm64
+## PaddleOCR arm64 docker镜像
 
 
 ## 公司试用了一款商用`ocr`，部署在`arm`平台上，我只是想那它来和`PaddleOcr`做个对比，但官方没有出相关教程（只有移动平台的），然后废了2天时间，主要参考[这篇文章](https://blog.csdn.net/qq_39056987/article/details/121078743?spm=1001.2014.3001.5501)，终于能成功运行了（没用交叉编译），遂顺手做个`docker`镜像，方便你我他~
 
 
-# 使用步骤
+# 快速使用
 - 拉取镜像：`docker pull steinvenior/paddle_lite_ocr_linux_arm64:all`
 
 - 设置别名，方便使用：`alias pdocr='docker run --rm  -i --user "$(id -u):$(id -g)" --workdir /data -v "$PWD:/data" steinvenior/paddle_lite_ocr_linux_arm64:all'`
