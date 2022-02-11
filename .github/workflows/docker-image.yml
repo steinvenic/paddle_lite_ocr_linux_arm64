@@ -34,6 +34,6 @@ jobs:
         run: |
           docker buildx build \
             --push \
-            --platform linux/arm64 \
+            --platform linux/arm64,linux/mips64 \
             --tag "steinvenior/paddle_lite_ocr_linux_arm64:all" \
             --file .docker/Dockerfile .
